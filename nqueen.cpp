@@ -11,7 +11,7 @@ void printboard(vector<string> &board){
         cout << "\n";
     }
     cout << "\n";
-    Sleep(500); // Wait for 500 milliseconds to visualize the backtracking
+    Sleep(100); // Wait for 500 milliseconds to visualize the backtracking
 }
 
 void backtrack(int r, int n, unordered_set<int>& col, unordered_set<int>& posdiag, unordered_set<int>& negdiag, vector<string>& board, vector<vector<string>>& res) {
@@ -27,6 +27,7 @@ void backtrack(int r, int n, unordered_set<int>& col, unordered_set<int>& posdia
 
         col.insert(c);
         posdiag.insert(r + c);
+    
         negdiag.insert(r - c);
         board[r][c] = 'Q';
         printboard(board); // Print the current board state
